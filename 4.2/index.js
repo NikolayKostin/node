@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 app.get('/time', function(req, res) {
-	res.send(new Date().tolocaleString());
+	res.send(new Date().toLocaleString());
 });
 
 app.listen(5300, function () {

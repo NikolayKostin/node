@@ -4,15 +4,6 @@ var app = express();
 var data = require('./data.json');
 
 app.get('/records', function(req, res) {
-	var count = req.query.say;
-	var offset = req.query.offset;
-
-	subdata = data.slice(offset, count);
-
-	res.json(subdata);
-});
-
-app.get('/records', function(req, res) {
 	var filter = req.query.filter;
 
 	subdata = data.filter(function(item){
