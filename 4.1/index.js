@@ -1,4 +1,20 @@
 //Реализовать веб-сервис, бросающий шестигранный кубик
+var express = require('express');
+var app = express();
+
+app.listen(7700, function(){
+	console.log('Server is running on http://localhost:7700/');
+});
+
+app.get('/cube', function(req,res){
+	var num = Math.floor(Math.random() * 6 ) + 1;
+	res.send(String(num));
+	console.log('Return: ' + num);
+});
+
+//http://localhost:7700/cube
+
+/*
 var http = require('http');
 
 var server = http.createServer();
@@ -20,3 +36,4 @@ server.on('request', function(request, response) {
 });
 
 //http://localhost:7701/dice
+*/

@@ -4,10 +4,10 @@ var app = express();
 var data = require('./data.json');
 
 app.get('/records', function(req, res) {
-	var count = req.query.say;
+	var count = req.query.count;
 	var offset = req.query.offset;
 
-	subdata = data.slice(offset, count);
+	var subdata = data.slice(offset, count);
 
 	res.json(subdata);
 });
@@ -15,3 +15,5 @@ app.get('/records', function(req, res) {
 app.listen(5300, function () {
 	console.log('Server is listening port http://localhost:5300/');
 });
+
+// localhost:5300/records?offset=1&count=2
